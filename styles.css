@@ -17,3 +17,508 @@ Fonts:
 - Avenir
 
 */
+
+/* Use a system font stack for readability */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* Header styles */
+header {
+  background-color: #FFF3D9; /* Light yellow */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  /* Make header stick to top on mobile */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Brand name on the left */
+.brand {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+/* Navigation links in the center */
+nav {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  margin: 0 8px;
+  font-size: 1em;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background: #fff7e1;
+}
+
+/* GIVE button on the right */
+.give-btn {
+  background: #FFD100; /* Bright yellow */
+  color: #222;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.give-btn:hover {
+  background: #ffe066;
+}
+
+/* Hero section styles */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  /* Use your own image as the background */
+  background: url('img/landing.png') no-repeat center center/cover;
+  /* Add top and bottom padding for vertical centering */
+  padding: 60px 0;
+  /* Make sure content is readable on top of the image */
+  color: #fff;
+  /* Remove flex for simpler layout */
+}
+
+/* Overlay for readability */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+  z-index: 1;
+}
+
+/* Hero content block */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* Align text to the left */
+  text-align: left;
+  /* Constrain width for readability */
+  max-width: 600px;
+  margin-left: 7%;
+  /* Add vertical spacing so text sits in the upper third */
+  margin-top: 40px;
+}
+
+/* Headline styles */
+.hero-title {
+  font-size: 44px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 18px;
+  line-height: 1.1;
+  /* Add a subtle text shadow for readability */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* Subtext styles */
+.hero-subtitle {
+  font-size: 16px;
+  margin-bottom: 28px;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  max-width: 90%;
+}
+
+/* Call-to-action button styles */
+.cta-btn {
+  background: #FFD100;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 32px;
+  font-size: 1.15em;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+
+.cta-btn:hover {
+  background: #ffe066;
+}
+
+/* Mission/Impact Section with two-column layout and styled image */
+.impact-section {
+  background: #E6F4FA; /* Light blue background for contrast */
+  padding: 48px 0;
+  color: #234;
+}
+.impact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 5%;
+  gap: 32px;
+}
+.impact-img-block {
+  flex: 1 1 340px;
+  min-width: 260px;
+  text-align: center;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.impact-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  display: block;
+}
+.impact-text-block {
+  flex: 2 1 340px;
+  min-width: 260px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin: 0;
+}
+.impact-title {
+  font-size: 2em;
+  margin-bottom: 12px;
+  color: #1a3a4a;
+}
+.impact-desc {
+  font-size: 1.1em;
+  margin-bottom: 16px;
+  color: #234;
+}
+.impact-list {
+  padding-left: 18px;
+  color: #234;
+  font-size: 1em;
+}
+.impact-list li {
+  margin-bottom: 8px;
+}
+
+/* Responsive: stack image above text on small screens */
+@media (max-width: 768px) {
+  .impact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .impact-img-block {
+    margin-bottom: 18px;
+  }
+  .impact-text-block {
+    padding: 20px 10px;
+    border-radius: 12px;
+    font-size: 0.98em;
+  }
+  .impact-title {
+    font-size: 1.3em;
+  }
+}
+
+/* The Water Crisis Section */
+.water-crisis-section {
+  background: #fff7e1; /* Light yellow background */
+  padding: 48px 0;     /* Equal top and bottom padding for symmetry */
+  text-align: center;
+  margin-bottom: 0;
+}
+.water-crisis-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #1a3a4a;
+  margin-bottom: 12px;
+  margin-top: 0; /* Remove any extra top margin */
+}
+.water-crisis-intro {
+  font-size: 1.1em;
+  color: #234;
+  margin-bottom: 36px;
+  margin-top: 0; /* Remove any extra top margin */
+}
+.water-crisis-columns {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.water-crisis-col {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 28px 18px 22px 18px;
+  min-width: 220px;
+  max-width: 280px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+.water-crisis-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(46,157,247,0.08);
+  border-radius: 50%;
+  background: #f4fafd;
+  object-fit: contain;
+}
+.water-crisis-col-title {
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #2E9DF7;
+  margin-bottom: 10px;
+}
+.water-crisis-fact {
+  font-size: 1em;
+  color: #234;
+}
+
+/* Responsive: stack cards/columns vertically on small screens */
+@media (max-width: 900px) {
+  .gift-action-cards,
+  .water-crisis-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .gift-card,
+  .water-crisis-col {
+    max-width: 340px;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 900px) {
+  .impact-container,
+  .footer-container,
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .impact-text-block,
+  .footer-nav,
+  .footer-contact,
+  .footer-social {
+    padding-left: 0;
+    margin-bottom: 18px;
+  }
+  .impact-text-block {
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .impact-section,
+  .testimonials-section {
+    padding: 28px 0 18px 0;
+  }
+  .impact-title,
+  .testimonials-title {
+    font-size: 1.2em;
+  }
+  .impact-img {
+    max-width: 98vw;
+  }
+  .testimonial-card {
+    max-width: 98vw;
+  }
+  .footer-container {
+    padding: 0 2%;
+  }
+}
+@media (max-width: 500px) {
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Footer Section - Clean, balanced, and responsive */
+.site-footer {
+  background: #f4fafd;
+  color: #222;
+  font-size: 1em;
+  border-top: 1px solid #e0e6ea;
+  /* margin-top: 40px; */ /* Remove this line to avoid extra space */
+  padding: 0;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 5% 24px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.footer-brand {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.footer-logo {
+  height: 32px;
+}
+.footer-nav {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.footer-nav a {
+  color: #234;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+.footer-nav a:hover {
+  color: #2E9DF7;
+  text-decoration: underline;
+}
+.footer-social {
+  flex: 1 1 200px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: #2E9DF7;
+  font-size: 1.3em;
+  box-shadow: 0 2px 8px rgba(46,157,247,0.08);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border: 1px solid #e0e6ea;
+}
+.footer-social-icon:hover {
+  background: #2E9DF7;
+  color: #fff;
+}
+.footer-contact {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.footer-contact-link {
+  color: #2E9DF7;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.footer-contact-link:hover {
+  text-decoration: underline;
+}
+.footer-newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.footer-newsletter-label {
+  font-size: 0.97em;
+  margin-right: 4px;
+}
+.footer-newsletter-input {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid #c7d7e0;
+  font-size: 1em;
+  margin-right: 4px;
+  flex: 1 1 120px;
+  min-width: 0;
+}
+.footer-newsletter-btn {
+  background: #FFD100;
+  color: #222;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.footer-newsletter-btn:hover {
+  background: #ffe066;
+}
+.footer-bottom {
+  text-align: center;
+  color: #888;
+  font-size: 0.97em;
+  padding: 18px 0 10px 0;
+  border-top: 1px solid #e0e6ea;
+  background: #f7f7f7;
+  margin-top: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+    padding: 32px 4% 18px 4%;
+  }
+  .footer-brand,
+  .footer-nav,
+  .footer-social,
+  .footer-contact {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+  .footer-newsletter-input {
+    width: 100%;
+    margin-right: 0;
+  }
+  .footer-bottom {
+    padding: 14px 0 8px 0;
+  }
+}

@@ -1,12 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>charity: water - Landing Page</title>
+  <!-- CSS is now in styles.css -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Add your HTML here -->
+  <!-- Header Section -->
+  <header>
+    <!-- Brand logo on the left -->
+    <img src="img/cw_logo-2.png" alt="charity: water logo" class="brand" style="height:32px;">
+    <!-- Navigation links in the center -->
+    <nav>
+      <a href="#">Join the Global Movement</a>
+      <a href="#">About Us</a>
+      <a href="#">Why Water?</a>
+    </nav>
+    <!-- GIVE button on the right -->
+    <button class="give-btn">GIVE 💧</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Dark overlay for readability -->
+    <div class="hero-overlay"></div>
+    <!-- Hero content (headline, subheading, button) -->
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Your $10 Can Change A Life.<br>
+        See The Change.
+      </h1>
+      <p class="hero-subtitle">
+        We use 100% of your donation to fund clean water. We’ll show you real stories, the progress, and impact of your gift.
+      </p>
+      <button class="cta-btn">Donate $10 in Seconds</button>
+    </div>
+  </section>
+
+  <!-- Mission/Impact Section -->
+  <section class="impact-section">
+    <!-- Two-column layout: image left, text right -->
+    <div class="impact-container">
+      <!-- Left: Image for mission/impact -->
+      <div class="impact-img-block">
+        <!-- Show a clear, styled image for visual impact -->
+        <img src="img/water-c.png" alt="Children smiling with access to clean water" class="impact-img">
+      </div>
+      <!-- Right: Text block -->
+      <div class="impact-text-block">
+        <h2 class="impact-title">Why Clean Water Matters</h2>
+        <p class="impact-desc">
+          Clean water changes everything. It improves health, education, and opportunity for families and communities.
+        </p>
+        <ul class="impact-list">
+          <li>1 in 10 people lack access to clean water</li>
+          <li>Women and children spend 200 million hours daily collecting water</li>
+          <li>Clean water reduces disease and saves lives</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Water Crisis Section -->
+  <section class="water-crisis-section">
+    <h2 class="water-crisis-title">The Water Crisis</h2>
+    <p class="water-crisis-intro">
+      785 million people lack access to clean water. This global crisis impacts health, education, and economies.
+    </p>
+    <div class="water-crisis-columns">
+      <!-- Health Column -->
+      <div class="water-crisis-col">
+        <img src="img/health.png" alt="Health icon" class="water-crisis-icon">
+        <h3 class="water-crisis-col-title">Health</h3>
+        <p class="water-crisis-fact">Diseases from dirty water kill more people every year than all forms of violence, including war.</p>
+      </div>
+      <!-- Education Column -->
+      <div class="water-crisis-col">
+        <img src="img/globe.png" alt="Education icon" class="water-crisis-icon">
+        <h3 class="water-crisis-col-title">Education</h3>
+        <p class="water-crisis-fact">Children miss school because they spend hours collecting water.</p>
+      </div>
+      <!-- Women & Girls Column -->
+      <div class="water-crisis-col">
+        <img src="img/muscle.png" alt="Women and girls icon" class="water-crisis-icon">
+        <h3 class="water-crisis-col-title">Women &amp; Girls</h3>
+        <p class="water-crisis-fact">Women and girls carry the burden of water collection.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Logo or site name -->
+      <div class="footer-brand">
+        <img src="img/cw_logo-2.png" alt="charity: water logo" class="footer-logo" style="height:32px;">
+      </div>
+      <!-- Navigation links -->
+      <nav class="footer-nav">
+        <a href="#">Join the Global Movement</a>
+        <a href="#">About Us</a>
+        <a href="#">Why Water?</a>
+      </nav>
+      <!-- Social media icons (placeholders) -->
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="footer-social-icon">📸</a>
+        <a href="#" aria-label="Twitter" class="footer-social-icon">🐦</a>
+        <a href="#" aria-label="Facebook" class="footer-social-icon">📘</a>
+      </div>
+      <!-- Contact/newsletter -->
+      <div class="footer-contact">
+        <a href="#" class="footer-contact-link">Contact</a>
+        <form class="footer-newsletter" action="#" method="post">
+          <label for="newsletter-email" class="footer-newsletter-label">Newsletter:</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Your email" class="footer-newsletter-input">
+          <button type="submit" class="footer-newsletter-btn">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 charity: water. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
