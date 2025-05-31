@@ -31,39 +31,104 @@ header {
   background-color: #fff7e1; /* Light yellow */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  /* Make header stick to top on mobile */
+  justify-content: flex-start; /* Align all items to the left */
+  padding: 12px 5%; /* Match footer horizontal padding */
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-/* Brand name on the left */
+/* Brand logo on the far left */
 .brand {
   font-weight: bold;
   font-size: 1.2em;
   letter-spacing: 1px;
+  margin-right: 24px; /* Add space between logo and nav */
 }
 
-/* Navigation links in the center */
-nav {
-  flex: 1;
-  text-align: center;
+/* Navigation container and items */
+header nav {
+  display: flex;
+  gap: 24px;
+  margin-right: auto;
+  flex-wrap: wrap;
 }
 
-nav a {
+/* Each nav item (for dropdown structure) */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Top-level nav links */
+header nav a {
   text-decoration: none;
   color: #222;
-  margin: 0 8px;
   font-size: 1em;
-  padding: 4px 6px;
+  padding: 4px 8px;
   border-radius: 6px;
   transition: background 0.2s;
+  font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 nav a:hover {
   background: #fff7e1;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%; /* Show just below the nav link */
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #e0e6ea;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(26,26,26,0.08);
+  z-index: 100;
+  flex-direction: column;
+  padding: 8px 0;
+  transition: opacity 0.2s;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  color: #222;
+  font-size: 1em;
+  font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  border-radius: 0;
+  background: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #fff7e1;
+}
+
+/* Show dropdown on hover (desktop) */
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+/* Optional: fade in dropdown */
+.nav-dropdown .dropdown-menu {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* GIVE button on the right */
@@ -136,6 +201,8 @@ nav a:hover {
   color: #fff;
   text-shadow: 0 1px 4px rgba(0,0,0,0.15);
   max-width: 90%;
+  /* Use Proxima Nova for the hero paragraph */
+  font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
 }
 
 /* Call-to-action button styles */
@@ -161,7 +228,7 @@ nav a:hover {
 .impact-section {
   background: #E6F4FA; /* Light blue background for contrast */
   padding: 48px 0;
-  color: #234;
+  color: #003366;
 }
 .impact-container {
   max-width: 1100px;
@@ -202,11 +269,15 @@ nav a:hover {
   font-size: 2em;
   margin-bottom: 12px;
   color: #1a3a4a;
+  /* Use Google font Source Serif 4 for the section title */
+  font-family: 'Source Serif 4', serif;
 }
 .impact-desc {
   font-size: 1.1em;
   margin-bottom: 16px;
   color: #234;
+  /* Use Proxima Nova for the impact section paragraph */
+  font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
 }
 .impact-list {
   padding-left: 18px;
@@ -215,6 +286,8 @@ nav a:hover {
 }
 .impact-list li {
   margin-bottom: 8px;
+  /* Use Avenir font for the list items in the impact section */
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
 }
 
 /* Responsive: stack image above text on small screens */
@@ -250,12 +323,16 @@ nav a:hover {
   color: #1a3a4a;
   margin-bottom: 12px;
   margin-top: 0; /* Remove any extra top margin */
+  /* Use Google font Source Serif 4 for this section title */
+  font-family: 'Source Serif 4', serif;
 }
 .water-crisis-intro {
   font-size: 1.1em;
   color: #234;
   margin-bottom: 36px;
   margin-top: 0; /* Remove any extra top margin */
+  /* Use Proxima Nova for the water crisis section paragraph */
+  font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
 }
 .water-crisis-columns {
   display: flex;
@@ -290,12 +367,14 @@ nav a:hover {
 .water-crisis-col-title {
   font-size: 1.15em;
   font-weight: bold;
-  color: #2E9DF7;
+  color: #77a8bb;
   margin-bottom: 10px;
 }
 .water-crisis-fact {
   font-size: 1em;
   color: #234;
+  /* Use Avenir font for the column paragraphs */
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
 }
 
 /* Responsive: stack cards/columns vertically on small screens */
@@ -366,159 +445,150 @@ nav a:hover {
   color: #222;
   font-size: 1em;
   border-top: 1px solid #e0e6ea;
-  /* margin-top: 40px; */ /* Remove this line to avoid extra space */
   padding: 0;
 }
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 5% 24px 5%;
+  padding: 32px 5% 12px 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
 }
 .footer-brand {
-  flex: 1 1 200px;
+  flex: 1 1 180px;
   display: flex;
   align-items: center;
-  margin-bottom: 18px;
+  justify-content: flex-start;
+  /* Add right margin to create more space between logo and nav */
+  margin-right: 32px;
 }
 .footer-logo {
-  height: 32px;
+  height: 20px;
+  display: block;
 }
 .footer-nav {
-  flex: 1 1 200px;
+  flex: 2 1 320px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 18px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px; /* Increase gap for more space between links */
 }
 .footer-nav a {
   color: #234;
   text-decoration: none;
   font-size: 1em;
-  transition: color 0.2s;
+  font-weight: 500;
+  padding: 4px 16px; /* Add more horizontal padding for spacing */
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap; /* Prevent link text from stacking */
 }
 .footer-nav a:hover {
-  color: #2E9DF7;
-  text-decoration: underline;
+  background: #ffe066;
+  color: #1a3a4a;
 }
 .footer-social {
-  flex: 1 1 200px;
+  flex: 1 1 180px;
   display: flex;
-  gap: 14px;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 18px;
+  gap: 14px;
 }
 .footer-social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #fff;
   color: #2E9DF7;
-  font-size: 1.3em;
+  font-size: 1.2em;
   box-shadow: 0 2px 8px rgba(46,157,247,0.08);
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
   border: 1px solid #e0e6ea;
+  transition: background 0.2s, color 0.2s;
 }
 .footer-social-icon:hover {
   background: #2E9DF7;
   color: #fff;
 }
 .footer-contact {
-  flex: 1 1 200px;
+  flex: 2 1 260px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 18px;
+  align-items: flex-end;
+  gap: 8px;
+  font-size: 0.98em;
 }
-.footer-contact-link {
-  color: #2E9DF7;
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+}
+.footer-contact-info a {
+  color: #77a8bb;
   text-decoration: none;
-  margin-bottom: 8px;
-  font-weight: bold;
+  margin-left: 4px;
 }
-.footer-contact-link:hover {
+.footer-contact-info a:hover {
   text-decoration: underline;
 }
-.footer-newsletter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-.footer-newsletter-label {
-  font-size: 0.97em;
-  margin-right: 4px;
-}
-.footer-newsletter-input {
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: 1px solid #c7d7e0;
-  font-size: 1em;
-  margin-right: 4px;
-  flex: 1 1 120px;
-  min-width: 0;
-}
-.footer-newsletter-btn {
-  background: #FFD100;
-  color: #222;
+.footer-support-link {
+  color: #77a8bb;
+  text-decoration: none;
   font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 7px 16px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.2s;
+  margin-top: 4px;
 }
-.footer-newsletter-btn:hover {
-  background: #ffe066;
+.footer-support-link:hover {
+  text-decoration: underline;
 }
 .footer-bottom {
   text-align: center;
   color: #888;
   font-size: 0.97em;
-  padding: 18px 0 10px 0;
+  padding: 10px 0 6px 0;
   border-top: 1px solid #e0e6ea;
   background: #f7f7f7;
   margin-top: 0;
 }
 
 /* Responsive Footer */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 28px;
-    padding: 32px 4% 18px 4%;
+    gap: 20px;
+    padding: 18px 4% 8px 4%;
   }
-  .footer-brand,
-  .footer-nav,
-  .footer-social,
+  .footer-brand {
+    justify-content: center;
+    width: 100%;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+  }
+  .footer-social {
+    justify-content: center;
+    width: 100%;
+  }
   .footer-contact {
     align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
     width: 100%;
   }
-  .footer-newsletter {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    width: 100%;
-  }
-  .footer-newsletter-input {
-    width: 100%;
-    margin-right: 0;
-  }
-  .footer-bottom {
-    padding: 14px 0 8px 0;
+  .footer-contact-info {
+    align-items: center;
   }
 }
+
+/* Import Proxima Nova from Google Fonts for the impact section paragraph */
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400&display=swap');

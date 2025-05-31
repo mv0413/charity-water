@@ -7,18 +7,45 @@
   <title>charity: water - Landing Page</title>
   <!-- CSS is now in styles.css -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts: Source Serif 4 for h1 headline -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- Header Section -->
   <header>
     <!-- Brand logo on the left -->
-    <img src="img/cw_logo-2.png" alt="charity: water logo" class="brand" style="height:32px;">
-    <!-- Navigation links in the center -->
+    <img src="img/cw_logo-2.png" alt="charity: water logo" class="brand" style="height:20px;">
+    <!-- Navigation links with dropdown menus -->
     <nav>
-      <a href="#">Join the Global Movement</a>
-      <a href="#">About Us</a>
-      <a href="#">Why Water?</a>
+      <!-- JOIN THE GLOBAL MOVEMENT with dropdown and arrow -->
+      <div class="nav-item nav-dropdown">
+        <a href="#">
+          JOIN THE GLOBAL MOVEMENT
+          <span class="nav-arrow" aria-hidden="true">▾</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#">Give monthly</a>
+          <a href="#">Become a water sponsor</a>
+          <a href="#">Plan legacy giving</a>
+        </div>
+      </div>
+      <!-- ABOUT US with dropdown and arrow -->
+      <div class="nav-item nav-dropdown">
+        <a href="#">
+          ABOUT US
+          <span class="nav-arrow" aria-hidden="true">▾</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#">Our work</a>
+          <a href="#">How we work</a>
+          <a href="#">Meet the founder</a>
+        </div>
+      </div>
+      <!-- Single link (no dropdown) -->
+      <div class="nav-item">
+        <a href="#">WHY WATER?</a>
+      </div>
     </nav>
     <!-- GIVE button on the right -->
     <button class="give-btn">GIVE 💧</button>
@@ -95,30 +122,36 @@
   <!-- Footer Section -->
   <footer class="site-footer">
     <div class="footer-container">
-      <!-- Logo or site name -->
+      <!-- Logo on the far left -->
       <div class="footer-brand">
-        <img src="img/cw_logo-2.png" alt="charity: water logo" class="footer-logo" style="height:32px;">
+        <img src="img/cw_logo-2.png" alt="charity: water logo" class="footer-logo">
       </div>
-      <!-- Navigation links -->
+      <!-- Navigation links in a row -->
       <nav class="footer-nav">
-        <a href="#">Join the Global Movement</a>
-        <a href="#">About Us</a>
-        <a href="#">Why Water?</a>
+        <a href="#">Take Action</a>
+        <a href="#">Get Involved</a>
+        <a href="#">Get to Know us</a>
       </nav>
-      <!-- Social media icons (placeholders) -->
+      <!-- Social media icons -->
       <div class="footer-social">
-        <a href="#" aria-label="Instagram" class="footer-social-icon">📸</a>
-        <a href="#" aria-label="Twitter" class="footer-social-icon">🐦</a>
-        <a href="#" aria-label="Facebook" class="footer-social-icon">📘</a>
+        <!-- Use images for social icons for beginners -->
+        <a href="#" aria-label="Instagram" class="footer-social-icon">
+          <img src="img/insta.png" alt="Instagram" style="width:22px; height:22px;">
+        </a>
+        <a href="#" aria-label="Twitter" class="footer-social-icon">
+          <img src="img/twitter.png" alt="Twitter" style="width:22px; height:22px;">
+        </a>
+        <a href="#" aria-label="Facebook" class="footer-social-icon">
+          <img src="img/facebook.png" alt="Facebook" style="width:22px; height:22px;">
+        </a>
       </div>
-      <!-- Contact/newsletter -->
+      <!-- Contact/Support info -->
       <div class="footer-contact">
-        <a href="#" class="footer-contact-link">Contact</a>
-        <form class="footer-newsletter" action="#" method="post">
-          <label for="newsletter-email" class="footer-newsletter-label">Newsletter:</label>
-          <input type="email" id="newsletter-email" name="email" placeholder="Your email" class="footer-newsletter-input">
-          <button type="submit" class="footer-newsletter-btn">Sign Up</button>
-        </form>
+        <div class="footer-contact-info">
+          <!-- Replace email and phone with a single link -->
+          <a href="#" class="footer-support-link">Get Our Emails</a>
+        </div>
+        <a href="#" class="footer-support-link">Support / Help Center</a>
       </div>
     </div>
     <div class="footer-bottom">
