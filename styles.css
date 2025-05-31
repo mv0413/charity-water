@@ -506,7 +506,7 @@ nav a:hover {
   height: 36px;
   border-radius: 50%;
   background: #fff;
-  color: #2E9DF7;
+  color: #FFC907;
   font-size: 1.2em;
   box-shadow: 0 2px 8px rgba(46,157,247,0.08);
   text-decoration: none;
@@ -514,7 +514,7 @@ nav a:hover {
   transition: background 0.2s, color 0.2s;
 }
 .footer-social-icon:hover {
-  background: #2E9DF7;
+  background: #FFC907;
   color: #fff;
 }
 .footer-contact {
