@@ -226,7 +226,7 @@ nav a:hover {
 
 /* Mission/Impact Section with two-column layout and styled image */
 .impact-section {
-  background: #E6F4FA; /* Light blue background for contrast */
+  background: #8BD1CB; /* Light blue background for contrast */
   padding: 48px 0;
   color: #003366;
 }
@@ -367,7 +367,7 @@ nav a:hover {
 .water-crisis-col-title {
   font-size: 1.15em;
   font-weight: bold;
-  color: #77a8bb;
+  color: #8BD1CB;
   margin-bottom: 10px;
 }
 .water-crisis-fact {
